@@ -7,6 +7,9 @@ package ru.gb;
 
 import java.time.LocalDate;
 import java.time.Period;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
 
 public class Employee {
     private String lastName;
@@ -110,4 +113,17 @@ public class Employee {
     public LocalDate getBirth() {
         return birth;
     }
+
+    static public void compare(List<Employee> people){
+        people.stream()
+                .collect(Collectors.groupingBy(Employee::getBirth))
+                .forEach((birth, peopleWithSameBirth) -> {
+                    if (peopleWithSameBirth.size() > 1) {
+                        System.out.printf("People with identical Birth %s are : %s%n", birth, peopleWithSameBirth);
+                    }
+                });
+    }
+
+
+
 }
