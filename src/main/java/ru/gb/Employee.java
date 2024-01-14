@@ -123,6 +123,13 @@ public class Employee {
                     }
                 });
     }
+    static public Integer comparator(ArrayList<Integer> firstDate, ArrayList<Integer> secondDate){
+
+        Integer fD = firstDate.get(0)*10000 + firstDate.get(1)*100 + firstDate.get(2);
+        Integer sD = secondDate.get(0)*10000 + secondDate.get(1)*100 + secondDate.get(2);
+        return Math.round((fD-sD)/(Math.abs(fD-sD)+0.01f));
+    }
+
 
 
 

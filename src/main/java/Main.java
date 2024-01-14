@@ -2,6 +2,7 @@ import ru.gb.Director;
 import ru.gb.Employee;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 public class Main {
@@ -42,6 +43,27 @@ public class Main {
         System.out.println(lastnames);
 
         Employee.compare(company);
+
+        ArrayList<Integer> fD = new ArrayList<>();
+        fD.add(2021);
+        fD.add(11);
+        fD.add(2);
+        ArrayList<Integer> sD = new ArrayList<>();
+        sD.add(2021);
+        sD.add(12);
+        sD.add(19);
+        ArrayList<Integer> tD = new ArrayList<>();
+        tD.add(2021);
+        tD.add(9);
+        tD.add(24);
+        ArrayList<Integer> fsD = new ArrayList<>();
+        fsD.add(2021);
+        fsD.add(11);
+        fsD.add(2);
+
+        System.out.println(Employee.comparator(fD,sD));
+        System.out.println(Employee.comparator(fD,tD));
+        System.out.println(Employee.comparator(fD,fsD));
 
     }
 
