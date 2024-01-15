@@ -8,7 +8,7 @@ public class Director extends Employee{
         super(lastName, firstName, fathersName, position, number, salary, birth);
     }
 
-     static public void addSalary(ArrayList<Employee> company, Integer age, Double amount) {
+    static public void addSalary(ArrayList<Employee> company, Integer age, Double amount) {
         for (Employee emp : company) {
             if ((emp.getAge() > age) && (emp.getClass() != Director.class)) {
                 emp.setSalary(emp.getSalary() + amount);

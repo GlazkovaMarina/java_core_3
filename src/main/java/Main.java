@@ -1,8 +1,8 @@
 import ru.gb.Director;
 import ru.gb.Employee;
+import ru.gb.Student;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
 public class Main {
@@ -64,6 +64,37 @@ public class Main {
         System.out.println(Employee.comparator(fD,sD));
         System.out.println(Employee.comparator(fD,tD));
         System.out.println(Employee.comparator(fD,fsD));
+
+        ArrayList<Double> sg = new ArrayList<>();
+        sg.add(4.3);
+        sg.add(4.5);
+
+        Student s1 = new Student("Anna", sg, "Информатика");
+        sg.clear();
+        sg.add(5.0);
+        sg.add(4.8);
+        sg.add(4.6);
+        Student s2 = new Student("Gleb", sg, "Информатика");
+        Student s3 = new Student("Dasha", sg, "Русский язык");
+        sg.clear();
+        sg.add(4.8);
+        sg.add(4.7);
+        sg.add(4.6);
+        Student s4 = new Student("Olga", sg, "Информатика");
+        Student s5 = new Student("Timur", sg, "Информатика");
+        Student s6 = new Student("Petr", sg, "Информатика");
+        Student s7 = new Student("Masha", sg, "Информатика");
+        List<Student> st = new ArrayList<>();
+        st.add(s1);
+        st.add(s2);
+        st.add(s3);
+        st.add(s4);
+        st.add(s5);
+        st.add(s6);
+        st.add(s7);
+        List<Student> students2;
+        students2 = Student.getAverageGradeInf(st);
+        System.out.println(students2);
 
     }
 
