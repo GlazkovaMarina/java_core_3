@@ -15,11 +15,7 @@ public class Student {
         this.specialty = specialty;
     }
 
-    /*
-    Имеется список студентов. Каждый студент имеет имя, список оценок и специальность.
-Найдите первых 5 студентов специальности "Информатика" с средним баллом выше 4.5, отсортированных по убыванию среднего балла.
-В решении не использовать циклы! Только StreamAPI
-     */
+
    public Double getAverageGrade() {
        Double avr = 0.0;
        for (Double g: grades){
@@ -27,6 +23,7 @@ public class Student {
        }
        return avr/grades.size();
    }
+
     public static List<Student> getAverageGradeInf(List<Student> students) {
         return students.stream().filter(e-> e.getAverageGrade() > 4.5).filter(e-> e.getSpecialty().equals("Информатика")).sorted(Comparator.comparingDouble(Student::getAverageGrade).reversed()).limit(5).toList();
     }
